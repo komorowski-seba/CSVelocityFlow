@@ -6,11 +6,28 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="CsVelocityFlow.Views.MainView"
              x:DataType="vm:MainViewModel">
-  <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-    <vm:MainViewModel />
-  </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+    <UserControl.DataTemplates>
+        <DataTemplate DataType="{x:Type local:TableViewModel}">
+            <local:TableView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:CheckboxViewModel}">
+            <local:CheckboxView />
+        </DataTemplate>
+    </UserControl.DataTemplates>
+
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#2b2b2b" Spacing="10" Padding="10">
+            <Button Content="Widok Tabeli" 
+                    Command="{Binding ShowTableViewCommand}" 
+                    Padding="10,5" Background="#3c3c3c" Foreground="White"/>
+            <Button Content="Widok Opcji (Checkbox)" 
+                    Command="{Binding ShowCheckboxViewCommand}" 
+                    Padding="10,5" Background="#3c3c3c" Foreground="White"/>
+        </StackPanel>
+
+        <ContentControl Content="{Binding CurrentView}" Margin="15"/>
+    </DockPanel>
+    
 </UserControl>

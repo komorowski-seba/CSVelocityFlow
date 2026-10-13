@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:CsVelocityFlow.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CsVelocityFlow.Views.CheckboxView"
+             x:DataType="local:CheckboxViewModel">
+
+    <StackPanel Spacing="15">
+        <TextBlock Text="Ustawienia Aplikacji (Widok Checkbox)" FontSize="18" FontWeight="Bold"/>
+		    
+        <CheckBox Content="Włącz powiadomienia push" IsChecked="{Binding IsNotificationsEnabled}"/>
+        <CheckBox Content="Używaj trybu ciemnego (Dark Mode)" IsChecked="{Binding IsDarkModeEnabled}"/>
+        <CheckBox Content="Zezwól na wysyłanie danych analitycznych" IsChecked="{Binding IsTelemetryEnabled}"/>
+		    
+        <TextBlock Text="Stan opcji w systemie:" Margin="0,15,0,0" FontWeight="SemiBold"/>
+        <StackPanel Orientation="Horizontal" Spacing="5">
+            <TextBlock Text="Powiadomienia:"/>
+            <TextBlock Text="{Binding IsNotificationsEnabled}"/>
+        </StackPanel>
+    </StackPanel>
+    
+</UserControl>

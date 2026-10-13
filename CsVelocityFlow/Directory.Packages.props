@@ -12,6 +12,7 @@
     <PackageVersion Include="Avalonia.iOS" Version="12.1.4" />
     <PackageVersion Include="Avalonia.Browser" Version="12.1.4" />
     <PackageVersion Include="Avalonia.Android" Version="12.1.4" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.1.2" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
     <PackageVersion Include="SkiaSharp.Views.Blazor" Version="3.x.x-preview..." />
