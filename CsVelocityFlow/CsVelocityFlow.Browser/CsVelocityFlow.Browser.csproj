@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <PackageReference Include="Avalonia.Browser"/>
+        <PackageReference Include="SkiaSharp.Views.Blazor" Version="3.x.x-preview..." />
     </ItemGroup>
 
     <ItemGroup>
