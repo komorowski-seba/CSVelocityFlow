@@ -1,3 +1,4 @@
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
@@ -6,11 +7,15 @@ using System.Linq;
 using Avalonia.Markup.Xaml;
 using CsVelocityFlow.ViewModels;
 using CsVelocityFlow.Views;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace CsVelocityFlow;
 
 public partial class App : Application
 {
+    public static IServiceProvider ServiceProvider { get; private set; } = null!;
+    
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -18,17 +23,17 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-        {
-            // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
-            // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
-            DisableAvaloniaDataAnnotationValidation();
-            desktop.MainWindow = new MainWindow
-            {
-                DataContext = new MainViewModel()
-            };
-        }
-        else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
+        // Inicjalizacja kontenera DI z ASP.NET Core
+        var services = new ServiceCollection();
+
+        // Rejestracja ViewModeli (Main zarządzający oraz widoki podrzędne)
+        // services.AddSingleton<MainViewModel>();
+        // services.AddTransient<TableViewModel>();
+        // services.AddTransient<CheckboxViewModel>();
+
+        ServiceProvider = services.BuildServiceProvider();        
+        
+        if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
             singleViewPlatform.MainView = new MainView
             {
@@ -39,16 +44,16 @@ public partial class App : Application
         base.OnFrameworkInitializationCompleted();
     }
 
-    private void DisableAvaloniaDataAnnotationValidation()
-    {
-        // Get an array of plugins to remove
-        var dataValidationPluginsToRemove =
-            BindingPlugins.DataValidators.OfType<DataAnnotationsValidationPlugin>().ToArray();
-
-        // remove each entry found
-        foreach (var plugin in dataValidationPluginsToRemove)
-        {
-            BindingPlugins.DataValidators.Remove(plugin);
-        }
-    }
+    // private void DisableAvaloniaDataAnnotationValidation()
+    // {
+    //     // Get an array of plugins to remove
+    //     var dataValidationPluginsToRemove =
+    //         BindingPlugins.DataValidators.OfType<DataAnnotationsValidationPlugin>().ToArray();
+    //
+    //     // remove each entry found
+    //     foreach (var plugin in dataValidationPluginsToRemove)
+    //     {
+    //         BindingPlugins.DataValidators.Remove(plugin);
+    //     }
+    // }
 }
