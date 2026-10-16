@@ -3,22 +3,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:CsVelocityFlow.ViewModels"
+             xmlns:views="clr-namespace:CsVelocityFlow.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="CsVelocityFlow.Views.MainView"
              x:DataType="vm:MainViewModel">
 
 
     <UserControl.DataTemplates>
-        <DataTemplate DataType="{x:Type local:TableViewModel}">
-            <local:TableView />
+        <DataTemplate DataType="{x:Type vm:TableViewModel}">
+            <views:TableView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type local:CheckboxViewModel}">
-            <local:CheckboxView />
+        <DataTemplate DataType="{x:Type vm:CheckboxViewModel}">
+            <views:CheckboxView />
         </DataTemplate>
     </UserControl.DataTemplates>
 
     <DockPanel>
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#2b2b2b" Spacing="10" Padding="10">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#2b2b2b" Spacing="10">
             <Button Content="Widok Tabeli" 
                     Command="{Binding ShowTableViewCommand}" 
                     Padding="10,5" Background="#3c3c3c" Foreground="White"/>

@@ -8,5 +8,6 @@
         x:Class="CsVelocityFlow.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="CsVelocityFlow">
+        
         <views:MainView />
 </Window>
