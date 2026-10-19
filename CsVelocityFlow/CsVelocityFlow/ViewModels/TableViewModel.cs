@@ -17,5 +17,4 @@ public partial class TableViewModel : ObservableObject
         new() { Name = "Anna Nowak", Role = "Developer" },
         new() { Name = "Piotr Zieliński", Role = "Tester" }
     ];
-
 }

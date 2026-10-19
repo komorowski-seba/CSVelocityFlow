@@ -29,6 +29,8 @@ public partial class App : Application
         // services.AddSingleton<MainViewModel>();
         // services.AddTransient<TableViewModel>();
         // services.AddTransient<CheckboxViewModel>();
+        
+        // services.AddSingleton<INavigationService, NavigationService>();
 
         ServiceProvider = services.BuildServiceProvider();        
         
