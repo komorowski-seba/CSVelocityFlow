@@ -23,6 +23,34 @@
 
     <ItemGroup>
       <Folder Include="Core\Domain\" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="App\Views\MainView.axaml.cs">
+        <DependentUpon>MainView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="App\Views\MainWindow.axaml.cs">
+        <DependentUpon>MainWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="App\Views\TableView.axaml.cs">
+        <DependentUpon>TableView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="App\Views\CheckboxView.axaml.cs">
+        <DependentUpon>CheckboxView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <AdditionalFiles Include="App\Views\CheckboxView.axaml" />
+      <AdditionalFiles Include="App\Views\MainView.axaml" />
+      <AdditionalFiles Include="App\Views\MainWindow.axaml" />
+      <AdditionalFiles Include="App\Views\TableView.axaml" />
     </ItemGroup>    
     
 </Project>

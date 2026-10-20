@@ -1,6 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace CsVelocityFlow.ViewModels;
+namespace CsVelocityFlow.App.ViewModels;
 
 public partial class CheckboxViewModel : ObservableObject 
 {

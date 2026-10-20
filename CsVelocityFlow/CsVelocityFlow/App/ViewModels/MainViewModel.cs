@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CsVelocityFlow.ViewModels;
+namespace CsVelocityFlow.App.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
@@ -17,13 +17,13 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void ShowTableView()
     {
-        CurrentView = App.ServiceProvider.GetRequiredService<TableViewModel>();
+        CurrentView = ServiceProviderServiceExtensions.GetRequiredService<TableViewModel>(App.ServiceProvider);
     }
 
     [RelayCommand]
     public void ShowCheckboxView()
     {
-        CurrentView = App.ServiceProvider.GetRequiredService<CheckboxViewModel>();
+        CurrentView = ServiceProviderServiceExtensions.GetRequiredService<CheckboxViewModel>(App.ServiceProvider);
     }
 }
 

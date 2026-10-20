@@ -1,11 +1,13 @@
-﻿namespace CsVelocityFlow.Core.Services;
+﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace CsVelocityFlow.Core.Services;
 
 public class NavigationService
 {
-    
     private readonly IServiceProvider _serviceProvider;
     private object? _currentView;
-
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -14,7 +16,6 @@ public class NavigationService
     {
         _serviceProvider = serviceProvider;
     }
-
 
     public object? CurrentView
     {
@@ -26,10 +27,8 @@ public class NavigationService
         }
     }
 
-
     public void NavigateTo<TViewModel>() where TViewModel : class
     {
-        // Pobieramy instancję ViewModelu zarejestrowaną w kontenerze DI
         var viewModel = _serviceProvider.GetService(typeof(TViewModel));
         CurrentView = viewModel;
     }

@@ -2,18 +2,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="using:CsVelocityFlow.ViewModels"
-             xmlns:views="clr-namespace:CsVelocityFlow.Views"
+             xmlns:vm="using:CsVelocityFlow.App.ViewModels"
+             xmlns:views="clr-namespace:CsVelocityFlow.App.Views"
+             xmlns:viewModels="clr-namespace:CsVelocityFlow.App.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="CsVelocityFlow.Views.MainView"
-             x:DataType="vm:MainViewModel">
+             x:Class="CsVelocityFlow.App.Views.MainView"
+             x:DataType="viewModels:MainViewModel">
 
 
     <UserControl.DataTemplates>
-        <DataTemplate DataType="{x:Type vm:TableViewModel}">
+        <DataTemplate DataType="{x:Type viewModels:TableViewModel}">
             <views:TableView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:CheckboxViewModel}">
+        <DataTemplate DataType="{x:Type viewModels:CheckboxViewModel}">
             <views:CheckboxView />
         </DataTemplate>
     </UserControl.DataTemplates>

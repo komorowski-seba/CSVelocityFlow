@@ -1,6 +1,4 @@
-using Avalonia.Controls;
-
-namespace CsVelocityFlow.Views;
+namespace CsVelocityFlow.App.Views;
 
 public partial class MainView : UserControl
 {

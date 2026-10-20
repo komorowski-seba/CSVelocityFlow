@@ -2,10 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:CsVelocityFlow.ViewModels"
+             xmlns:local="clr-namespace:CsVelocityFlow.App.ViewModels"
+             xmlns:viewModels="clr-namespace:CsVelocityFlow.App.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="CsVelocityFlow.Views.CheckboxView"
-             x:DataType="local:CheckboxViewModel">
+             x:Class="CsVelocityFlow.App.Views.CheckboxView"
+             x:DataType="viewModels:CheckboxViewModel">
 
     <StackPanel Spacing="15">
         <TextBlock Text="Ustawienia Aplikacji (Widok Checkbox)" FontSize="18" FontWeight="Bold"/>
