@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CsVelocityFlow.App.ViewModels;
+namespace CsVelocityFlow.Application.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {

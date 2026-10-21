@@ -1,7 +1,7 @@
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace CsVelocityFlow.App.ViewModels;
+namespace CsVelocityFlow.Application.ViewModels;
 
 public class SampleRow
 {

@@ -47,10 +47,10 @@
 
 
     <ItemGroup>
-      <AdditionalFiles Include="App\Views\CheckboxView.axaml" />
-      <AdditionalFiles Include="App\Views\MainView.axaml" />
-      <AdditionalFiles Include="App\Views\MainWindow.axaml" />
-      <AdditionalFiles Include="App\Views\TableView.axaml" />
+      <AdditionalFiles Include="Application\Views\CheckboxView.axaml" />
+      <AdditionalFiles Include="Application\Views\MainView.axaml" />
+      <AdditionalFiles Include="Application\Views\MainWindow.axaml" />
+      <AdditionalFiles Include="Application\Views\TableView.axaml" />
     </ItemGroup>    
     
 </Project>

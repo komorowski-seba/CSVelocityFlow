@@ -5,14 +5,14 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
-using CsVelocityFlow.ViewModels;
-using CsVelocityFlow.Views;
+using CsVelocityFlow.Application.ViewModels;
+using CsVelocityFlow.Application.Views;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace CsVelocityFlow;
 
-public partial class App : Application
+public partial class App : Avalonia.Application
 {
     public static IServiceProvider ServiceProvider { get; private set; } = null!;
     

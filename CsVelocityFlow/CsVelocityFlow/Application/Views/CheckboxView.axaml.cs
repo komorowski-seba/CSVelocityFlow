@@ -1,4 +1,6 @@
-namespace CsVelocityFlow.App.Views;
+using Avalonia.Controls;
+
+namespace CsVelocityFlow.Application.Views;
 
 public partial class CheckboxView : UserControl
 {
