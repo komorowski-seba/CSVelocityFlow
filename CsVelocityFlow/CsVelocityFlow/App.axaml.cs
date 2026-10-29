@@ -25,21 +25,19 @@ public partial class App : Avalonia.Application
     {
         var services = new ServiceCollection();
 
-        // Rejestracja ViewModeli (Main zarządzający oraz widoki podrzędne)
         services.AddSingleton<MainViewModel>();
         services.AddTransient<TableViewModel>();
         services.AddTransient<CheckboxViewModel>();
         
         // services.AddSingleton<INavigationService, NavigationService>();
 
-        ServiceProvider = services.BuildServiceProvider();        
+        ServiceProvider = services.BuildServiceProvider();
         
         if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
             singleViewPlatform.MainView = new MainView
             {
-                // DataContext = ServiceProvider.GetRequiredService<MainViewModel>()
-                DataContext = new MainViewModel()
+                DataContext = ServiceProvider.GetRequiredService<MainViewModel>()
             };
         }
 

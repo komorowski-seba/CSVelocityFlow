@@ -6,6 +6,6 @@ public partial class CheckboxView : UserControl
 {
     public CheckboxView()
     {
-        // InitializeComponent();
+        InitializeComponent();
     }
 }
