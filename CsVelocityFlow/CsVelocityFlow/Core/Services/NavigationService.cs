@@ -29,13 +29,13 @@ public class NavigationService
 
     public void NavigateTo<TViewModel>() where TViewModel : class
     {
-        var viewModel = _serviceProvider.GetService(typeof(TViewModel));
-        CurrentView = viewModel;
+        // var viewModel = _serviceProvider.GetService(typeof(TViewModel));
+        // CurrentView = viewModel;
     }
 
 
     protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
     {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        // PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
