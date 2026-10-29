@@ -10,7 +10,7 @@ public class SampleRow
 }
 
 
-public partial class TableViewModel : ObservableObject 
+public partial class TableViewModel : ViewModelBase 
 {
     public ObservableCollection<SampleRow> Items { get; } = [
         new() { Name = "Jan Kowalski", Role = "Administrator" },

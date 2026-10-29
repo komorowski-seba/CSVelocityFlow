@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:CsVelocityFlow.Application.ViewModels"
              xmlns:viewModels="clr-namespace:CsVelocityFlow.Application.ViewModels"
-             x:Class="CsVelocityFlow.App.Views.TableView"
+             x:Class="CsVelocityFlow.Application.Views.TableView"
              x:DataType="viewModels:TableViewModel">
     
     <StackPanel Spacing="10">

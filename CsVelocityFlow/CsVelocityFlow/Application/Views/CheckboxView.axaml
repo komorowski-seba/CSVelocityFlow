@@ -5,7 +5,7 @@
              xmlns:local="clr-namespace:CsVelocityFlow.Application.ViewModels"
              xmlns:viewModels="clr-namespace:CsVelocityFlow.Application.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="CsVelocityFlow.App.Views.CheckboxView"
+             x:Class="CsVelocityFlow.Application.Views.CheckboxView"
              x:DataType="viewModels:CheckboxViewModel">
 
     <StackPanel Spacing="15">

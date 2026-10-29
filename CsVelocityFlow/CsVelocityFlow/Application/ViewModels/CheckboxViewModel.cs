@@ -2,7 +2,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace CsVelocityFlow.Application.ViewModels;
 
-public partial class CheckboxViewModel : ObservableObject 
+public partial class CheckboxViewModel : ViewModelBase 
 {
     [ObservableProperty] private bool _isNotificationsEnabled = true;
     [ObservableProperty] private bool _isDarkModeEnabled = false;
