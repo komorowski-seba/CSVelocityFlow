@@ -7,6 +7,7 @@ namespace CsVelocityFlow.Application.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty] private ViewModelBase? _currentView;
+    [ObservableProperty] private bool _isMenuOpen;
 
     public MainViewModel()
     {

@@ -8,16 +8,40 @@
              x:DataType="viewModels:MainViewModel">
 
     <DockPanel>
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#2b2b2b" Spacing="10">
-            <Button Content="Widok Tabeli" 
-                    Command="{Binding ShowTableViewCommand}" 
-                    Padding="10,5" Background="#3c3c3c" Foreground="White"/>
-            <Button Content="Widok Opcji (Checkbox)" 
-                    Command="{Binding ShowCheckboxViewCommand}" 
-                    Padding="10,5" Background="#3c3c3c" Foreground="White"/>
-        </StackPanel>
+        <SplitView IsPaneOpen="{Binding IsMenuOpen}"
+                   DisplayMode="CompactInline"
+                   OpenPaneLength="200"
+                   CompactPaneLength="50"
+                   Background="#1e1e1e"
+                   PaneBackground="#2b2b2b">
+            
+            <SplitView.Pane>
+                <StackPanel Spacing="5" Margin="5">
+                    <Button Command="{Binding ShowCheckboxViewCommand}" 
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
+                            Padding="10,10" Background="Transparent" Foreground="White">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="📋" VerticalAlignment="Center"/>
+                            <TextBlock Text="Widok Tabeli" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
-        <ContentControl Content="{Binding CurrentView}" Margin="15"/>
+                    <Button Command="{Binding ShowTableViewCommand}" 
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
+                            Padding="10,10" Background="Transparent" Foreground="White">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="☑️" VerticalAlignment="Center"/>
+                            <TextBlock Text="Widok Opcji" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </SplitView.Pane>
+
+            <Grid Background="#1e1e1e">
+                <ContentControl Content="{Binding CurrentView}" Margin="15"/>
+            </Grid>
+        </SplitView>
     </DockPanel>
+    
     
 </UserControl>
