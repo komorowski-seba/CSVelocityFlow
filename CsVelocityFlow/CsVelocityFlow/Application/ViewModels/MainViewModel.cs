@@ -14,13 +14,13 @@ public partial class MainViewModel : ViewModelBase
     }    
     
     [RelayCommand]
-    public void ShowTableView()
+    private void ShowTableView()
     {
         CurrentView = App.ServiceProvider.GetRequiredService<TableViewModel>();
     }
 
     [RelayCommand]
-    public void ShowCheckboxView()
+    private void ShowCheckboxView()
     {
         CurrentView = App.ServiceProvider.GetRequiredService<CheckboxViewModel>();
     }
