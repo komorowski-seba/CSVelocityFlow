@@ -2,46 +2,73 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModels="clr-namespace:CsVelocityFlow.Application.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:viewModels1="clr-namespace:CsVelocityFlow.Application.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800"
+             d:DesignHeight="450"
              x:Class="CsVelocityFlow.Application.Views.MainView"
-             x:DataType="viewModels:MainViewModel">
-
-    <DockPanel>
+             x:DataType="viewModels1:MainViewModel">
+    
+                   <!-- CompactPaneLength="{Binding #MenuPanel.Bounds.Width}" -->
+    <DockPanel Background="#F3F4F6">
         <SplitView IsPaneOpen="{Binding IsMenuOpen}"
                    DisplayMode="CompactInline"
-                   OpenPaneLength="200"
-                   CompactPaneLength="50"
-                   Background="#1e1e1e"
-                   PaneBackground="#2b2b2b">
+                   OpenPaneLength="220"
+                   CompactPaneLength="220"
+                   Background="#F3F4F6"
+                   PaneBackground="#E0E7FF">
             
             <SplitView.Pane>
-                <StackPanel Spacing="5" Margin="5">
-                    <Button Command="{Binding ShowCheckboxViewCommand}" 
-                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
-                            Padding="10,10" Background="Transparent" Foreground="White">
-                        <StackPanel Orientation="Horizontal" Spacing="10">
-                            <TextBlock Text="📋" VerticalAlignment="Center"/>
-                            <TextBlock Text="Widok Tabeli" VerticalAlignment="Center"/>
+                <StackPanel Spacing="8" Margin="8,15,8,8" ClipToBounds="False" x:Name="MenuPanel">
+                    
+                    <Button Command="{Binding ShowCheckboxViewCommand}"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            Padding="12,10"
+                            Background="#FFFFFF" Foreground="#374151"
+                            CornerRadius="10"
+                            ClipToBounds="False" >
+                        <Button.Styles>
+                            <Style
+                                Selector="Button:pointerover /template/ContentPresenter">
+                                <Setter
+                                    Property="Background" Value="#EEF2F6"/>
+                            </Style>
+                        </Button.Styles>
+                        <StackPanel
+                            Orientation="Horizontal" Spacing="12">
+                            <TextBlock Text=" "
+                                       FontSize="16" VerticalAlignment="Center"/>
+                            <TextBlock Text="Widok Opcji" FontWeight="Medium" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-
-                    <Button Command="{Binding ShowTableViewCommand}" 
-                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
-                            Padding="10,10" Background="Transparent" Foreground="White">
-                        <StackPanel Orientation="Horizontal" Spacing="10">
-                            <TextBlock Text="☑️" VerticalAlignment="Center"/>
-                            <TextBlock Text="Widok Opcji" VerticalAlignment="Center"/>
+                    
+                    <Button Command="{Binding ShowTableViewCommand}"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            Padding="12,10"
+                            Background="#FFFFFF" Foreground="#374151"
+                            CornerRadius="10"
+                            ClipToBounds="False" >
+                        <Button.Styles>
+                            <Style
+                                Selector="Button:pointerover /template/ContentPresenter">
+                                <Setter
+                                    Property="Background" Value="#EEF2F6"/>
+                            </Style>
+                        </Button.Styles>
+                        <StackPanel
+                            Orientation="Horizontal" Spacing="12">
+                            <TextBlock Text=" "
+                                       FontSize="16" VerticalAlignment="Center"/>
+                            <TextBlock Text="Widok Tabeli" FontWeight="Medium" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
             </SplitView.Pane>
-
-            <Grid Background="#1e1e1e">
-                <ContentControl Content="{Binding CurrentView}" Margin="15"/>
+            
+            <Grid Background="#F9FAFB">
+                <ContentControl Content="{Binding CurrentView}" Margin="20"/>
             </Grid>
         </SplitView>
     </DockPanel>
-    
-    
 </UserControl>
