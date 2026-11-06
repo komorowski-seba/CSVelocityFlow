@@ -4,13 +4,81 @@
              x:Class="CsVelocityFlow.Application.Views.TableView"
              x:DataType="viewModels:TableViewModel">
     
-    <StackPanel Spacing="10">
-        <TextBlock Text="Przegląd użytkowników (Widok Tabeli)" FontSize="18" FontWeight="Bold"/>
-        <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" GridLinesVisibility="All" BorderThickness="1" BorderBrush="Gray">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Imię i Nazwisko" Binding="{Binding Name}" Width="*" />
-                <DataGridTextColumn Header="Rola" Binding="{Binding Role}" Width="*" />
-            </DataGrid.Columns>
-        </DataGrid>
-    </StackPanel>
+    <UserControl.Styles>
+        <Style Selector="DataGridColumnHeader">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#666666"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="16, 12, 16, 12"/>
+            <Setter Property="SeparatorBrush" Value="Transparent"/>
+        </Style>
+        
+        <Style Selector="DataGridCell">
+            <Setter Property="Padding" Value="16, 12, 16, 12"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        
+        <Style Selector="DataGridRow:pointerover">
+            <Setter Property="Background" Value="#F9FAFB"/>
+        </Style>
+    </UserControl.Styles>
+
+    <Grid Margin="24">
+        <StackPanel Spacing="20">
+            <StackPanel Spacing="4">
+                <TextBlock Text="Przegląd użytkowników" FontSize="22" FontWeight="SemiBold" Foreground="#111827"/>
+                <TextBlock Text="Zarządzaj uprawnieniami i rolami członków zespołu." FontSize="14" Foreground="#6B7280"/>
+            </StackPanel>
+            
+            <Border CornerRadius="8" 
+                    BorderThickness="1" 
+                    BorderBrush="#E5E7EB" 
+                    Background="White" 
+                    ClipToBounds="True">
+                
+                <DataGrid ItemsSource="{Binding Items}" 
+                          AutoGenerateColumns="False" 
+                          GridLinesVisibility="Horizontal" 
+                          HorizontalGridLinesBrush="#F3F4F6"
+                          BorderThickness="0"
+                          RowBackground="Transparent"
+                          HeadersVisibility="Column">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Imię i Nazwisko" Width="2*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" 
+                                               VerticalAlignment="Center" 
+                                               FontWeight="Medium" 
+                                               Foreground="#111827" 
+                                               Margin="16,0"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Rola" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="#EFF6FF" 
+                                            BorderBrush="#DBEAFE" 
+                                            BorderThickness="1" 
+                                            CornerRadius="12" 
+                                            HorizontalAlignment="Left" 
+                                            Padding="10,4"
+                                            Margin="16,0">
+                                        <TextBlock Text="{Binding Role}" 
+                                                   FontSize="12" 
+                                                   FontWeight="Medium" 
+                                                   Foreground="#1E40AF" 
+                                                   VerticalAlignment="Center"/>
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </StackPanel>
+    </Grid>
 </UserControl>
