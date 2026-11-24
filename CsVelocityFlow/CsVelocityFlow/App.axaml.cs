@@ -9,8 +9,6 @@ namespace CsVelocityFlow;
 
 public class App : Avalonia.Application
 {
-    public static IServiceProvider ServiceProvider { get; private set; } = null!;
-    
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -21,15 +19,15 @@ public class App : Avalonia.Application
         var services = new ServiceCollection();
 
         services.AddSingleton<MainViewModel>();
-        services.AddTransient<TableViewModel>();
-        services.AddTransient<CheckboxViewModel>();
+        services.AddSingleton<TableViewModel>(sp => new Lazy<TableViewModel>(() => sp.GetRequiredService<TableViewModel>()));
+        services.AddSingleton<CheckboxViewModel>(sp => new Lazy<CheckboxViewModel>(() => sp.GetRequiredService<CheckboxViewModel>()));
 
-        ServiceProvider = services.BuildServiceProvider();
+        var serviceProvider = services.BuildServiceProvider();
         if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
             singleViewPlatform.MainView = new MainView
             {
-                DataContext = ServiceProvider.GetRequiredService<MainViewModel>()
+                DataContext = serviceProvider.GetRequiredService<MainViewModel>()
             };
         }
 

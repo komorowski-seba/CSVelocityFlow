@@ -8,6 +8,8 @@ public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty] private ViewModelBase? _currentView;
     [ObservableProperty] private bool _isMenuOpen;
+    private TableViewModel _tableViewModel;
+    private CheckboxViewModel _checkboxViewModel;
 
     public MainViewModel()
     {

@@ -19,7 +19,6 @@
             
             <SplitView.Pane>
                 <StackPanel Spacing="8" Margin="8,15,8,8" ClipToBounds="False" x:Name="MenuPanel">
-                    
                     <Button Command="{Binding ShowCheckboxViewCommand}"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Left"
@@ -41,7 +40,6 @@
                             <TextBlock Text="Widok Opcji" FontWeight="Medium" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-                    
                     <Button Command="{Binding ShowTableViewCommand}"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Left"
