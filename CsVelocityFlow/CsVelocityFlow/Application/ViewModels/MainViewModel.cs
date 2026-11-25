@@ -1,6 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace CsVelocityFlow.Application.ViewModels;
 
@@ -8,23 +8,25 @@ public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty] private ViewModelBase? _currentView;
     [ObservableProperty] private bool _isMenuOpen;
-    private TableViewModel _tableViewModel;
-    private CheckboxViewModel _checkboxViewModel;
+    private readonly TableViewModel _tableViewModel;
+    private readonly CheckboxViewModel _checkboxViewModel;
 
-    public MainViewModel()
+    public MainViewModel(Lazy<TableViewModel> tableViewModel, Lazy<CheckboxViewModel> checkboxViewModel)
     {
+        _tableViewModel = tableViewModel.Value;
+        _checkboxViewModel = checkboxViewModel.Value;
         ShowTableView();
     }    
     
     [RelayCommand]
     private void ShowTableView()
     {
-        CurrentView = App.ServiceProvider.GetRequiredService<TableViewModel>();
+        CurrentView = _tableViewModel;
     }
 
     [RelayCommand]
     private void ShowCheckboxView()
     {
-        CurrentView = App.ServiceProvider.GetRequiredService<CheckboxViewModel>();
+        CurrentView = _checkboxViewModel;
     }
 }

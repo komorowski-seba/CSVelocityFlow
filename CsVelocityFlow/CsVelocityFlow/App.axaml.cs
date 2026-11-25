@@ -19,8 +19,10 @@ public class App : Avalonia.Application
         var services = new ServiceCollection();
 
         services.AddSingleton<MainViewModel>();
-        services.AddSingleton<TableViewModel>(sp => new Lazy<TableViewModel>(() => sp.GetRequiredService<TableViewModel>()));
-        services.AddSingleton<CheckboxViewModel>(sp => new Lazy<CheckboxViewModel>(() => sp.GetRequiredService<CheckboxViewModel>()));
+        services.AddSingleton<TableViewModel>();
+        services.AddSingleton<CheckboxViewModel>();
+        services.AddSingleton(sp => new Lazy<TableViewModel>(sp.GetRequiredService<TableViewModel>));
+        services.AddSingleton(sp => new Lazy<CheckboxViewModel>(sp.GetRequiredService<CheckboxViewModel>));
 
         var serviceProvider = services.BuildServiceProvider();
         if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
