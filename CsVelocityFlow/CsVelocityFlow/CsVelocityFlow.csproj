@@ -23,8 +23,6 @@
 
     <ItemGroup>
       <Folder Include="Core\Domain\" />
-      <Folder Include="Core\Interfaces\" />
-      <Folder Include="Core\Services\" />
     </ItemGroup>
 
 
