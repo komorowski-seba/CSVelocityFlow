@@ -17,6 +17,7 @@
         <PackageReference Include="Avalonia.Fonts.Inter" />
         <PackageReference Include="Avalonia.Controls.DataGrid" />
         <PackageReference Include="CommunityToolkit.Mvvm" />
+        <PackageReference Include="CsvHelper" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     </ItemGroup>
 

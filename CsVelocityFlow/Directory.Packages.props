@@ -1,9 +1,8 @@
 <Project>
-<PropertyGroup>
+  <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-</PropertyGroup>
-
-<ItemGroup>
+  </PropertyGroup>
+  <ItemGroup>
     <PackageVersion Include="Avalonia" Version="12.1.4" />
     <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.1.4" />
     <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.1.4" />
@@ -14,7 +13,8 @@
     <PackageVersion Include="Avalonia.Android" Version="12.1.4" />
     <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.1.2" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageVersion Include="CsvHelper" Version="34.1.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
     <PackageVersion Include="SkiaSharp.Views.Blazor" Version="3.x.x-preview..." />
-</ItemGroup>
+  </ItemGroup>
 </Project>
